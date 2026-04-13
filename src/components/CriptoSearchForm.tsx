@@ -1,4 +1,6 @@
-// * RFC para cargar componente pre-view
+// * RFC para cargar componente pre-views
+import { currencies } from "../data/data"
+
 
 export default function CriptoSearchForm() {
   return (
@@ -10,6 +12,11 @@ export default function CriptoSearchForm() {
           id="currency"
           >
           <option value="''">-- Seleccione una Opcion --</option>
+          {
+            currencies.map(currency => (
+              <option  key={currency.code} value={currency.code}>{currency.name}</option>
+            ))
+          }
         </select>
       </div>
 
