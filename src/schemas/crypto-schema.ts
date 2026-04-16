@@ -19,3 +19,13 @@ export const PairSchema = z.object({
   currency: z.string(),
   cryptocurrency: z.string()
 })
+
+// ! 1.3. Metodo para crear ESQUEMA de la inf que necesitamos de la resp de la API
+export const ApiResponseSchema = z.object({
+  VALUE: z.number(),
+  CURRENT_DAY_HIGH: z.number(),
+  CURRENT_DAY_LOW: z.number(),
+  CURRENT_DAY_CHANGE: z.number(),
+  INSTRUMENT: z.string(),
+  VALUE_LAST_UPDATE_TS: z.number(),
+})
