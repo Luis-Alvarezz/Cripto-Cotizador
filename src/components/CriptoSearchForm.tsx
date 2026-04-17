@@ -8,6 +8,7 @@ import ErrorMessage from "./ErrorMessage"
 export default function CriptoSearchForm() {
 
   const cryptos = useCryptoStore((state) => state.cryptoCurrencies)
+  const fetchData = useCryptoStore((state) => state.fetchData)
   
   const initialState = { 
     // * Son los name del Formulario:
@@ -44,7 +45,8 @@ export default function CriptoSearchForm() {
       setError(initialState)
     }, 3000)
 
-    // * Consultar la API
+    // * Consultar la API para calcular Cryto a Moneda local
+    fetchData(pair)
   }
 
   return (
