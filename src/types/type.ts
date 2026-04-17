@@ -1,5 +1,5 @@
 import z from 'zod'
-import { CryptoCurrencyResponseSchemaAPI, CurrencySchema, PairSchema } from '../schemas/crypto-schema'
+import { ApiResponseSchema, CryptoCurrencyResponseSchemaAPI, CurrencySchema, PairSchema } from '../schemas/crypto-schema'
 
 // ! 2.- Infiriendo el TYPE mediente el ESQUEMA
 export type Currency = z.infer<typeof CurrencySchema>
@@ -10,3 +10,6 @@ export type CryptoCurrencyInfer = z.infer<typeof CryptoCurrencyResponseSchemaAPI
 
 // ! 2.2- Infiriendo el TYPE mediante ESQUEMA para el STATE de 'pair'
 export type PairInfer = z.infer<typeof PairSchema> 
+
+// ! 2.- Infiriendo el TYPE mediante ESQUEMA para la respuesta de la API
+export type APIResponseInfer = z.infer<typeof ApiResponseSchema>
